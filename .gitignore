@@ -1,0 +1,41 @@
+# Unreal Engine generated files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/
+
+# Editor and IDE folders
+.vs/
+.idea/
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+*.log.*
+
+# System files
+*.DS_Store
+Thumbs.db
+
+# Unreal Auto-generated metadata
+*.xcodeproj
+*.xcworkspace
+*.xcuserstate
+
+# Build artifacts
+*.pdb
+*.idb
+*.obj
+*.o
+*.lib
+*.exe
+*.dll
+*.app
+*.ipa
+*.dSYM

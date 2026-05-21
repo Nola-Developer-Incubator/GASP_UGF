@@ -1,0 +1,18 @@
+# Treat Unreal Engine content assets as binary so Git does not attempt text diff or CRLF conversion
+*.uasset -text diff
+*.umap -text diff
+*.ubulk -text
+*.uexp -text
+*.uptnl -text
+*.umap* -text diff
+
+# Keep project and plugin metadata as text
+*.uproject text eol=crlf
+*.uplugin text eol=crlf
+*.ini text eol=crlf
+*.cpp text eol=crlf
+*.h text eol=crlf
+*.cs text eol=crlf
+*.json text eol=crlf
+*.xml text eol=crlf
+*.txt text eol=crlf
