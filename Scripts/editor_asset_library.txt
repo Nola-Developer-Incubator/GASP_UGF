@@ -1,0 +1,6 @@
+graph Nodes: ERROR EdGraph: Property 'Nodes' for attribute 'Nodes' on 'EdGraph' is protected and cannot be read
+graph nodes: ERROR EdGraph: Property 'Nodes' for attribute 'nodes' on 'EdGraph' is protected and cannot be read
+graph UbergraphPages: ERROR EdGraph: Failed to find property 'UbergraphPages' for attribute 'UbergraphPages' on 'EdGraph'
+graph FunctionGraphs: ERROR EdGraph: Failed to find property 'FunctionGraphs' for attribute 'FunctionGraphs' on 'EdGraph'
+bp UbergraphPages: ERROR Blueprint: Property 'UbergraphPages' for attribute 'UbergraphPages' on 'Blueprint' is protected and cannot be read
+bp FunctionGraphs: ERROR Blueprint: Property 'FunctionGraphs' for attribute 'FunctionGraphs' on 'Blueprint' is protected and cannot be read

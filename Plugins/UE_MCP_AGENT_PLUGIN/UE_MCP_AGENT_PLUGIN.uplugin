@@ -1,0 +1,24 @@
+{
+    "FileVersion": 3,
+    "Version": 1,
+    "VersionName": "1.0",
+    "FriendlyName": "UE MCP Agent",
+    "Description": "Unreal Editor MCP integration plugin providing an in-editor MCP server, connector, tool registry, and dashboard.",
+    "Category": "AI",
+    "CreatedBy": "Nola Development Incubator",
+    "CreatedByURL": "",
+    "EnabledByDefault": false,
+    "CanContainContent": false,
+    "Modules": [
+        {
+            "Name": "UE_MCP_Plugin",
+            "Type": "Editor",
+            "LoadingPhase": "Default"
+        },
+        {
+            "Name": "MCPServerPlugin",
+            "Type": "Runtime",
+            "LoadingPhase": "Default"
+        }
+    ]
+}

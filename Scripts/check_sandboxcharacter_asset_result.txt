@@ -1,0 +1,4 @@
+does_asset_exist=True
+asset=<Object '/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP' (0x0000022F24DDEA00) Class 'Blueprint'>
+asset_class=Blueprint
+asset_path_name=/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP

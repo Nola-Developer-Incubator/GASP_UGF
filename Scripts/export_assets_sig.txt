@@ -1,0 +1,9 @@
+callable: <built-in method export_assets of AssetTools object at 0x0000020195BFD6D0>
+doc:
+x.export_assets(assets_to_export, export_path) -> None
+Exports the specified objects to file.
+
+Args:
+    assets_to_export (Array[str]): List of full asset names (e.g /Game/Path/Asset) to export
+    export_path (str): The directory path to export to.
+signature error: no signature found for builtin <built-in method export_assets of AssetTools object at 0x0000020195BFD6D0>

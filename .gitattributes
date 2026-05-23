@@ -7,12 +7,12 @@
 *.umap* -text diff
 
 # Keep project and plugin metadata as text
-*.uproject text eol=crlf
-*.uplugin text eol=crlf
-*.ini text eol=crlf
-*.cpp text eol=crlf
-*.h text eol=crlf
-*.cs text eol=crlf
-*.json text eol=crlf
-*.xml text eol=crlf
-*.txt text eol=crlf
+*.uproject text
+*.uplugin text
+*.ini text
+*.cpp text
+*.h text
+*.cs text
+*.json text
+*.xml text
+*.txt text

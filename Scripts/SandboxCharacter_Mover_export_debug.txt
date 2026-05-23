@@ -1,0 +1,6 @@
+asset_path=/Game/Blueprints/SandboxCharacter_Mover
+asset=<Object '/Game/Blueprints/SandboxCharacter_Mover.SandboxCharacter_Mover' (0x00000250140B2400) Class 'Blueprint'>
+task.filename=C:/Unreal_Projects/GASP/Scripts/SandboxCharacter_Mover_export.txt
+task.object=<Object '/Game/Blueprints/SandboxCharacter_Mover.SandboxCharacter_Mover' (0x00000250140B2400) Class 'Blueprint'>
+asset_tools=<Object '/Script/AssetTools.Default__AssetToolsImpl' (0x000002500C7A9600) Class 'AssetToolsImpl'>
+exception=export_assets() required argument 'export_path' (pos 2) not found

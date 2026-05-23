@@ -1,0 +1,43 @@
+bp UbergraphPages: ERROR Blueprint: Property 'UbergraphPages' for attribute 'UbergraphPages' on 'Blueprint' is protected and cannot be read
+bp Ubergraphpages: ERROR Blueprint: Property 'UbergraphPages' for attribute 'Ubergraphpages' on 'Blueprint' is protected and cannot be read
+bp UBERGRAPHPAGES: ERROR Blueprint: Property 'UbergraphPages' for attribute 'UBERGRAPHPAGES' on 'Blueprint' is protected and cannot be read
+bp ubergraphpages: ERROR Blueprint: Property 'UbergraphPages' for attribute 'ubergraphpages' on 'Blueprint' is protected and cannot be read
+bp FunctionGraphs: ERROR Blueprint: Property 'FunctionGraphs' for attribute 'FunctionGraphs' on 'Blueprint' is protected and cannot be read
+bp Functiongraphs: ERROR Blueprint: Property 'FunctionGraphs' for attribute 'Functiongraphs' on 'Blueprint' is protected and cannot be read
+bp FUNCTIONGRAPHS: ERROR Blueprint: Property 'FunctionGraphs' for attribute 'FUNCTIONGRAPHS' on 'Blueprint' is protected and cannot be read
+bp functiongraphs: ERROR Blueprint: Property 'FunctionGraphs' for attribute 'functiongraphs' on 'Blueprint' is protected and cannot be read
+bp MacroGraphs: ERROR Blueprint: Property 'MacroGraphs' for attribute 'MacroGraphs' on 'Blueprint' is protected and cannot be read
+bp Macrographs: ERROR Blueprint: Property 'MacroGraphs' for attribute 'Macrographs' on 'Blueprint' is protected and cannot be read
+bp MACROGRAPHS: ERROR Blueprint: Property 'MacroGraphs' for attribute 'MACROGRAPHS' on 'Blueprint' is protected and cannot be read
+bp macrographs: ERROR Blueprint: Property 'MacroGraphs' for attribute 'macrographs' on 'Blueprint' is protected and cannot be read
+bp InterfaceGraphs: ERROR Blueprint: Failed to find property 'InterfaceGraphs' for attribute 'InterfaceGraphs' on 'Blueprint'
+bp Interfacegraphs: ERROR Blueprint: Failed to find property 'Interfacegraphs' for attribute 'Interfacegraphs' on 'Blueprint'
+bp INTERFACEGRAPHS: ERROR Blueprint: Failed to find property 'INTERFACEGRAPHS' for attribute 'INTERFACEGRAPHS' on 'Blueprint'
+bp interfacegraphs: ERROR Blueprint: Failed to find property 'interfacegraphs' for attribute 'interfacegraphs' on 'Blueprint'
+bp SimpleConstructionScript: ERROR Blueprint: Property 'SimpleConstructionScript' for attribute 'SimpleConstructionScript' on 'Blueprint' is protected and cannot be read
+bp Simpleconstructionscript: ERROR Blueprint: Property 'SimpleConstructionScript' for attribute 'Simpleconstructionscript' on 'Blueprint' is protected and cannot be read
+bp SIMPLECONSTRUCTIONSCRIPT: ERROR Blueprint: Property 'SimpleConstructionScript' for attribute 'SIMPLECONSTRUCTIONSCRIPT' on 'Blueprint' is protected and cannot be read
+bp simpleconstructionscript: ERROR Blueprint: Property 'SimpleConstructionScript' for attribute 'simpleconstructionscript' on 'Blueprint' is protected and cannot be read
+bp GeneratedClass: ERROR Blueprint: Property 'GeneratedClass' for attribute 'GeneratedClass' on 'Blueprint' is protected and cannot be read
+bp Generatedclass: ERROR Blueprint: Property 'GeneratedClass' for attribute 'Generatedclass' on 'Blueprint' is protected and cannot be read
+bp GENERATEDCLASS: ERROR Blueprint: Property 'GeneratedClass' for attribute 'GENERATEDCLASS' on 'Blueprint' is protected and cannot be read
+bp generatedclass: ERROR Blueprint: Property 'GeneratedClass' for attribute 'generatedclass' on 'Blueprint' is protected and cannot be read
+bp SkeletonGeneratedClass: ERROR Blueprint: Property 'SkeletonGeneratedClass' for attribute 'SkeletonGeneratedClass' on 'Blueprint' is protected and cannot be read
+bp Skeletongeneratedclass: ERROR Blueprint: Property 'SkeletonGeneratedClass' for attribute 'Skeletongeneratedclass' on 'Blueprint' is protected and cannot be read
+bp SKELETONGENERATEDCLASS: ERROR Blueprint: Property 'SkeletonGeneratedClass' for attribute 'SKELETONGENERATEDCLASS' on 'Blueprint' is protected and cannot be read
+bp skeletongeneratedclass: ERROR Blueprint: Property 'SkeletonGeneratedClass' for attribute 'skeletongeneratedclass' on 'Blueprint' is protected and cannot be read
+bp BlueprintType: ERROR Blueprint: Property 'BlueprintType' for attribute 'BlueprintType' on 'Blueprint' is protected and cannot be read
+bp Blueprinttype: ERROR Blueprint: Property 'BlueprintType' for attribute 'Blueprinttype' on 'Blueprint' is protected and cannot be read
+bp BLUEPRINTTYPE: ERROR Blueprint: Property 'BlueprintType' for attribute 'BLUEPRINTTYPE' on 'Blueprint' is protected and cannot be read
+bp blueprinttype: ERROR Blueprint: Property 'BlueprintType' for attribute 'blueprinttype' on 'Blueprint' is protected and cannot be read
+bp LastEditedDocuments: ERROR Blueprint: Property 'LastEditedDocuments' for attribute 'LastEditedDocuments' on 'Blueprint' is protected and cannot be read
+bp Lastediteddocuments: ERROR Blueprint: Property 'LastEditedDocuments' for attribute 'Lastediteddocuments' on 'Blueprint' is protected and cannot be read
+bp LASTEDITEDDOCUMENTS: ERROR Blueprint: Property 'LastEditedDocuments' for attribute 'LASTEDITEDDOCUMENTS' on 'Blueprint' is protected and cannot be read
+bp lastediteddocuments: ERROR Blueprint: Property 'LastEditedDocuments' for attribute 'lastediteddocuments' on 'Blueprint' is protected and cannot be read
+EventGraph nodes property?
+graph Nodes: ERROR EdGraph: Property 'Nodes' for attribute 'Nodes' on 'EdGraph' is protected and cannot be read
+graph nodes: ERROR EdGraph: Property 'Nodes' for attribute 'nodes' on 'EdGraph' is protected and cannot be read
+graph GraphNodes: ERROR EdGraph: Failed to find property 'GraphNodes' for attribute 'GraphNodes' on 'EdGraph'
+graph graph_nodes: ERROR EdGraph: Failed to find property 'graph_nodes' for attribute 'graph_nodes' on 'EdGraph'
+graph NodeList: ERROR EdGraph: Failed to find property 'NodeList' for attribute 'NodeList' on 'EdGraph'
+graph node_list: ERROR EdGraph: Failed to find property 'node_list' for attribute 'node_list' on 'EdGraph'

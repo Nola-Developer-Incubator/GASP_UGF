@@ -6,7 +6,8 @@ Saved/
 Build/
 
 # Editor and IDE folders
-.vs/
+/.vs/
+/.vscode/
 .idea/
 *.opensdf
 *.sdf

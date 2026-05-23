@@ -1,0 +1,5 @@
+safety_level: medium
+allowed_directories:
+  - "Source/"
+  - "Plugins/"
+  - "Content/Temp/AI/"

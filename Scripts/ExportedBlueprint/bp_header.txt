@@ -1,0 +1,120 @@
+Begin Object Class=/Script/Engine.Blueprint Name="SandboxCharacter_GASP" ExportPath="/Script/Engine.Blueprint'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP'"
+   Begin Object Class=/Script/Engine.EdGraph Name="EventGraph" ExportPath="/Script/Engine.EdGraph'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph'"
+      Begin Object Class=/Script/BlueprintGraph.K2Node_Event Name="K2Node_Event_3" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_Event_3'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_25" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_25'"
+      End Object
+      Begin Object Class=/Script/UnrealEd.EdGraphNode_Comment Name="EdGraphNode_Comment_6" ExportPath="/Script/UnrealEd.EdGraphNode_Comment'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.EdGraphNode_Comment_6'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_27" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_27'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CustomEvent Name="K2Node_CustomEvent_5" ExportPath="/Script/BlueprintGraph.K2Node_CustomEvent'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CustomEvent_5'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_4" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_4'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_AssignDelegate Name="K2Node_AssignDelegate_1" ExportPath="/Script/BlueprintGraph.K2Node_AssignDelegate'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_AssignDelegate_1'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_Event Name="K2Node_Event_0" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_Event_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_13" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_VariableGet_13'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_6" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_6'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_Event Name="K2Node_Event_1" ExportPath="/Script/BlueprintGraph.K2Node_Event'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_Event_1'"
+      End Object
+      Begin Object Class=/Script/InputBlueprintNodes.K2Node_EnhancedInputAction Name="K2Node_EnhancedInputAction_7" ExportPath="/Script/InputBlueprintNodes.K2Node_EnhancedInputAction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_EnhancedInputAction_7'"
+      End Object
+      Begin Object Class=/Script/InputBlueprintNodes.K2Node_EnhancedInputAction Name="K2Node_EnhancedInputAction_4" ExportPath="/Script/InputBlueprintNodes.K2Node_EnhancedInputAction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_EnhancedInputAction_4'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_IfThenElse Name="K2Node_IfThenElse_4" ExportPath="/Script/BlueprintGraph.K2Node_IfThenElse'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_IfThenElse_4'"
+      End Object
+      Begin Object Class=/Script/InputBlueprintNodes.K2Node_EnhancedInputAction Name="K2Node_EnhancedInputAction_8" ExportPath="/Script/InputBlueprintNodes.K2Node_EnhancedInputAction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_EnhancedInputAction_8'"
+      End Object
+      Begin Object Class=/Script/UnrealEd.EdGraphNode_Comment Name="EdGraphNode_Comment_8" ExportPath="/Script/UnrealEd.EdGraphNode_Comment'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.EdGraphNode_Comment_8'"
+      End Object
+      Begin Object Class=/Script/UnrealEd.EdGraphNode_Comment Name="EdGraphNode_Comment_9" ExportPath="/Script/UnrealEd.EdGraphNode_Comment'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.EdGraphNode_Comment_9'"
+      End Object
+      Begin Object Class=/Script/UnrealEd.EdGraphNode_Comment Name="EdGraphNode_Comment_10" ExportPath="/Script/UnrealEd.EdGraphNode_Comment'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.EdGraphNode_Comment_10'"
+      End Object
+      Begin Object Class=/Script/InputBlueprintNodes.K2Node_EnhancedInputAction Name="K2Node_EnhancedInputAction_9" ExportPath="/Script/InputBlueprintNodes.K2Node_EnhancedInputAction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_EnhancedInputAction_9'"
+      End Object
+      Begin Object Class=/Script/UnrealEd.EdGraphNode_Comment Name="EdGraphNode_Comment_13" ExportPath="/Script/UnrealEd.EdGraphNode_Comment'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.EdGraphNode_Comment_13'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_IfThenElse Name="K2Node_IfThenElse_5" ExportPath="/Script/BlueprintGraph.K2Node_IfThenElse'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_IfThenElse_5'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_IfThenElse Name="K2Node_IfThenElse_11" ExportPath="/Script/BlueprintGraph.K2Node_IfThenElse'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_IfThenElse_11'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_83" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_83'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_InputKey Name="K2Node_InputKey_0" ExportPath="/Script/BlueprintGraph.K2Node_InputKey'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_InputKey_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_InputKey Name="K2Node_InputKey_1" ExportPath="/Script/BlueprintGraph.K2Node_InputKey'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_InputKey_1'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_26" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_26'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CommutativeAssociativeBinaryOperator Name="K2Node_CommutativeAssociativeBinaryOperator_0" ExportPath="/Script/BlueprintGraph.K2Node_CommutativeAssociativeBinaryOperator'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CommutativeAssociativeBinaryOperator_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_30" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_30'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_InputKey Name="K2Node_InputKey_3" ExportPath="/Script/BlueprintGraph.K2Node_InputKey'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_InputKey_3'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_InputKey Name="K2Node_InputKey_2" ExportPath="/Script/BlueprintGraph.K2Node_InputKey'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_InputKey_2'"
+      End Object
+      Begin Object Class=/Script/UnrealEd.EdGraphNode_Comment Name="EdGraphNode_Comment_17" ExportPath="/Script/UnrealEd.EdGraphNode_Comment'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.EdGraphNode_Comment_17'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CommutativeAssociativeBinaryOperator Name="K2Node_CommutativeAssociativeBinaryOperator_2" ExportPath="/Script/BlueprintGraph.K2Node_CommutativeAssociativeBinaryOperator'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CommutativeAssociativeBinaryOperator_2'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_32" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_VariableGet_32'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_SetFieldsInStruct Name="K2Node_SetFieldsInStruct_3" ExportPath="/Script/BlueprintGraph.K2Node_SetFieldsInStruct'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_SetFieldsInStruct_3'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_33" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_VariableGet_33'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_BreakStruct Name="K2Node_BreakStruct_4" ExportPath="/Script/BlueprintGraph.K2Node_BreakStruct'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_BreakStruct_4'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_62" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_62'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_24" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_VariableGet_24'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_SetFieldsInStruct Name="K2Node_SetFieldsInStruct_0" ExportPath="/Script/BlueprintGraph.K2Node_SetFieldsInStruct'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_SetFieldsInStruct_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_IfThenElse Name="K2Node_IfThenElse_0" ExportPath="/Script/BlueprintGraph.K2Node_IfThenElse'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_IfThenElse_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_IfThenElse Name="K2Node_IfThenElse_8" ExportPath="/Script/BlueprintGraph.K2Node_IfThenElse'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_IfThenElse_8'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_38" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_38'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_29" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_29'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_64" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_64'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_Select Name="K2Node_Select_0" ExportPath="/Script/BlueprintGraph.K2Node_Select'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_Select_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_65" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_65'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_61" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_61'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_PromotableOperator Name="K2Node_PromotableOperator_2" ExportPath="/Script/BlueprintGraph.K2Node_PromotableOperator'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_PromotableOperator_2'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_76" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_76'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CommutativeAssociativeBinaryOperator Name="K2Node_CommutativeAssociativeBinaryOperator_3" ExportPath="/Script/BlueprintGraph.K2Node_CommutativeAssociativeBinaryOperator'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CommutativeAssociativeBinaryOperator_3'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_77" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_77'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_74" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_74'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CommutativeAssociativeBinaryOperator Name="K2Node_CommutativeAssociativeBinaryOperator_1" ExportPath="/Script/BlueprintGraph.K2Node_CommutativeAssociativeBinaryOperator'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CommutativeAssociativeBinaryOperator_1'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_75" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_75'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_PromotableOperator Name="K2Node_PromotableOperator_6" ExportPath="/Script/BlueprintGraph.K2Node_PromotableOperator'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_PromotableOperator_6'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_3" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_VariableGet_3'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_80" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_80'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_0" ExportPath="/Script/BlueprintGraph.K2Node_VariableGet'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_VariableGet_0'"
+      End Object
+      Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_11" ExportPath="/Script/BlueprintGraph.K2Node_CallFunction'/Game/Blueprints/SandboxCharacter_GASP.SandboxCharacter_GASP:EventGraph.K2Node_CallFunction_11'"
+      End Object

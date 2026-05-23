@@ -1,0 +1,17 @@
+UbergraphPages: ERROR Blueprint: Property 'UbergraphPages' for attribute 'UbergraphPages' on 'Blueprint' is protected and cannot be read
+FunctionGraphs: ERROR Blueprint: Property 'FunctionGraphs' for attribute 'FunctionGraphs' on 'Blueprint' is protected and cannot be read
+DelegateSignatureGraphs: ERROR Blueprint: Property 'DelegateSignatureGraphs' for attribute 'DelegateSignatureGraphs' on 'Blueprint' is protected and cannot be read
+Macros: ERROR Blueprint: Failed to find property 'Macros' for attribute 'Macros' on 'Blueprint'
+MacroGraphs: ERROR Blueprint: Property 'MacroGraphs' for attribute 'MacroGraphs' on 'Blueprint' is protected and cannot be read
+InterfaceGraphs: ERROR Blueprint: Failed to find property 'InterfaceGraphs' for attribute 'InterfaceGraphs' on 'Blueprint'
+SimpleConstructionScript: ERROR Blueprint: Property 'SimpleConstructionScript' for attribute 'SimpleConstructionScript' on 'Blueprint' is protected and cannot be read
+GeneratedClass: ERROR Blueprint: Property 'GeneratedClass' for attribute 'GeneratedClass' on 'Blueprint' is protected and cannot be read
+BlueprintType: ERROR Blueprint: Property 'BlueprintType' for attribute 'BlueprintType' on 'Blueprint' is protected and cannot be read
+SkeletonGeneratedClass: ERROR Blueprint: Property 'SkeletonGeneratedClass' for attribute 'SkeletonGeneratedClass' on 'Blueprint' is protected and cannot be read
+LastEditedDocuments: ERROR Blueprint: Property 'LastEditedDocuments' for attribute 'LastEditedDocuments' on 'Blueprint' is protected and cannot be read
+BlueprintCategory: str
+  len=0
+Status: ERROR Blueprint: Property 'Status' for attribute 'Status' on 'Blueprint' is protected and cannot be read
+bIsRegeneratingOnLoad: ERROR Blueprint: Property 'bIsRegeneratingOnLoad' for attribute 'bIsRegeneratingOnLoad' on 'Blueprint' is protected and cannot be read
+EventGraph nodes property?
+nodes error: EdGraph: Property 'Nodes' for attribute 'nodes' on 'EdGraph' is protected and cannot be read
