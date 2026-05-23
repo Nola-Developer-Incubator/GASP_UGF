@@ -20,7 +20,10 @@ This backlog captures the implemented phases, remaining work, and current progre
 - Core gameplay systems: **Implemented**.
 - Mind/AI phase: **Implemented**.
 - Motion matching trajectory API: **Added**.
+- Motion matching schema profile: **Added**.
+- AnimBP binding spec: **Defined**.
 - Documentation and design plan: **Written**.
+- IDE Agent implementation directives: **Completed**.
 - Repository GitHub remote configured and pushed: **Yes**.
 - Remaining focus: **Blueprint/AnimBP hookup, HIL integration, in-editor asset binding, and polish**.
 
@@ -32,6 +35,8 @@ This backlog captures the implemented phases, remaining work, and current progre
 | Add skin tag and update flow | Skin | Done | `GASP_CosmeticsComponent` raises skin update events and updates combat tags.
 | Add motion matching pose search hooks | Skin | Done | `AnimNotifyState_DamageWindow` and pose search notifications were added for damage-driven matching.
 | Implement predicted trajectory API and AnimBP history support | Motion Matching | Done | `UGASP_StateTreeComponent` now exposes predicted trajectory arrays for AnimBP use.
+| Add C++ bone tracking schema and motion matching type definitions | Motion Matching | Done | `Source/GASP/Public/GASP_MotionMatchingTypes.h` and `GetLocomotionSchemaProfile()` were added.
+| Document AnimBP trajectory mapping and Blueprint binding spec | Docs | Done | `README.md` now contains the Event Graph and Anim Graph mapping spec for `SandboxCharacter_Mover_ABP`.
 | Publish implementation plan and phase 2 design doc | Docs | Done | `Source/GASP/PDD_UnifiedGameplayFramework.md` published and referenced in README.
 | Add tactical evaluation helpers | Tactical | Done | `GASP_TacticalLibrary` evaluates distance/intent and ranks candidates.
 | Add validation library and pawn checks | Validation | Done | `GASP_ValidationLibrary` validates combat component and mover pawn.
@@ -58,9 +63,11 @@ This backlog captures the implemented phases, remaining work, and current progre
 3. Validate in-editor input and pawn possession flow with the sandbox GameMode.
 4. Add HIL-level telemetry / debug logging for body/mind decision paths.
 5. Confirm gameplay tags drive the intended AI behavior in runtime.
-6. Polish any remaining runtime issues or asset bindings.
-7. Hook `GetPredictedTrajectoryHistory` into AnimBP/Blueprint motion matching and verify no duplicate pawn blueprint is needed.
-8. Keep future commits focused on source/docs changes only and avoid tracking large untracked content assets.
+6. Wire `SandboxCharacter_Mover_ABP` to the motion matching node by converting `GetPredictedTrajectoryHistory` output into the native `PoseSearchTrajectory` input.
+7. Validate `FGASPLocomotionSchemaProfile` bone definitions against `SKM_UEFN_Mannequin` and adjust weights as needed.
+8. Keep `SandboxCharacter_Mover` unchanged; all integration should occur through AnimBP and `UGASP_StateTreeComponent`.
+9. Polish any remaining runtime issues or asset bindings.
+10. Keep future commits focused on source/docs changes only and avoid tracking large untracked content assets.
 
 ---
 
