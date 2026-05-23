@@ -7,6 +7,8 @@
 #include "MoverComponent.h"
 #include "MoverSimulationTypes.h"
 #include "MoveLibrary/MovementUtils.h"
+#include "Engine/SkeletalMesh.h"
+#include "Animation/Skeleton.h"
 
 UGASP_StateTreeComponent::UGASP_StateTreeComponent()
 {
@@ -128,6 +130,56 @@ TArray<FGASPTrajectorySample> UGASP_StateTreeComponent::GetPredictedTrajectoryHi
 FGASPLocomotionSchemaProfile UGASP_StateTreeComponent::GetLocomotionSchemaProfile() const
 {
     return FGASPLocomotionSchemaProfile();
+}
+
+bool UGASP_StateTreeComponent::ValidateMotionMatchingSkeleton(USkeletalMesh* SkeletalMesh, TArray<FName>& OutMissingBoneNames) const
+{
+    OutMissingBoneNames.Reset();
+    if (!SkeletalMesh)
+    {
+        return false;
+    }
+
+    const USkeleton* Skeleton = SkeletalMesh->GetSkeleton();
+    if (!Skeleton)
+    {
+        return false;
+    }
+
+    const FReferenceSkeleton& RefSkeleton = Skeleton->GetReferenceSkeleton();
+    const FGASPLocomotionSchemaProfile Profile = GetLocomotionSchemaProfile();
+
+    for (const FGASPBoneTrackingMetric& BoneMetric : Profile.CoreBones)
+    {
+        if (BoneMetric.BoneName.IsNone())
+        {
+            continue;
+        }
+
+        if (RefSkeleton.FindBoneIndex(BoneMetric.BoneName) == INDEX_NONE)
+        {
+            OutMissingBoneNames.Add(BoneMetric.BoneName);
+        }
+    }
+
+    return OutMissingBoneNames.Num() == 0;
+}
+
+TArray<FName> UGASP_StateTreeComponent::GetLocomotionSchemaBoneNames() const
+{
+    TArray<FName> BoneNames;
+    const FGASPLocomotionSchemaProfile Profile = GetLocomotionSchemaProfile();
+    BoneNames.Reserve(Profile.CoreBones.Num());
+
+    for (const FGASPBoneTrackingMetric& BoneMetric : Profile.CoreBones)
+    {
+        if (!BoneMetric.BoneName.IsNone())
+        {
+            BoneNames.Add(BoneMetric.BoneName);
+        }
+    }
+
+    return BoneNames;
 }
 
 int32 UGASP_StateTreeComponent::GetTrajectoryHistoryCount() const

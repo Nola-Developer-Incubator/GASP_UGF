@@ -7,6 +7,7 @@
 #include "GASP_StateTreeComponent.generated.h"
 
 class AGASP_MoverCharacter;
+class USkeletalMesh;
 
 USTRUCT(BlueprintType)
 struct FGASPTrajectorySample
@@ -54,6 +55,12 @@ public:
 
     UFUNCTION(BlueprintCallable, Category="GASP|MotionMatching")
     FGASPLocomotionSchemaProfile GetLocomotionSchemaProfile() const;
+
+    UFUNCTION(BlueprintCallable, Category="GASP|MotionMatching")
+    bool ValidateMotionMatchingSkeleton(USkeletalMesh* SkeletalMesh, TArray<FName>& OutMissingBoneNames) const;
+
+    UFUNCTION(BlueprintPure, Category="GASP|MotionMatching")
+    TArray<FName> GetLocomotionSchemaBoneNames() const;
 
     UFUNCTION(BlueprintPure, Category="GASP|Locomotion")
     int32 GetTrajectoryHistoryCount() const;

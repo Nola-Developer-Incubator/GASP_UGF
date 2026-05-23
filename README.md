@@ -148,6 +148,8 @@ The workspace uses the following VS Code settings:
 - Do not modify the parent `SandboxCharacter_Mover` pawn blueprint.
 - Keep all trajectory array wiring inside `SandboxCharacter_Mover_ABP`.
 - Use the new `UGASP_StateTreeComponent::GetLocomotionSchemaProfile` getter to define core bone tracking profiles in C++ and keep designer workflow consistent.
+- Use `UGASP_StateTreeComponent::GetLocomotionSchemaBoneNames` to retrieve the required bone list for the motion matching schema.
+- Before building `PSD_Locomotion`, use `ValidateMotionMatchingSkeleton` in the AnimBP or editor utility to verify the target `SKM_UEFN_Mannequin` skeleton contains the expected bone names.
 
 ### Phase VI.a: Current GAS Implementation Status
 

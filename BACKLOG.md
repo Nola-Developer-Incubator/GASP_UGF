@@ -13,6 +13,7 @@ This backlog captures the implemented phases, remaining work, and current progre
 - Added validation utilities in `GASP_ValidationLibrary`.
 - Added mind/AI logic in `GASP_StateTreeComponent` with intent tag evaluation.
 - Added new gameplay tags for skin and combat states, plus AI intent tags.
+- Added motion matching skeleton validation helpers in `GASP_StateTreeComponent` for AnimBP and editor asset checks.
 - Verified full project build success after each major integration step.
 
 ## Current Status
@@ -64,7 +65,7 @@ This backlog captures the implemented phases, remaining work, and current progre
 4. Add HIL-level telemetry / debug logging for body/mind decision paths.
 5. Confirm gameplay tags drive the intended AI behavior in runtime.
 6. Wire `SandboxCharacter_Mover_ABP` to the motion matching node by converting `GetPredictedTrajectoryHistory` output into the native `PoseSearchTrajectory` input.
-7. Validate `FGASPLocomotionSchemaProfile` bone definitions against `SKM_UEFN_Mannequin` and adjust weights as needed.
+7. Validate `FGASPLocomotionSchemaProfile` bone definitions against `SKM_UEFN_Mannequin` using `ValidateMotionMatchingSkeleton` and adjust weights as needed.
 8. Keep `SandboxCharacter_Mover` unchanged; all integration should occur through AnimBP and `UGASP_StateTreeComponent`.
 9. Polish any remaining runtime issues or asset bindings.
 10. Keep future commits focused on source/docs changes only and avoid tracking large untracked content assets.
