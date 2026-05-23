@@ -10,6 +10,7 @@
 `GASP` is a modular Unreal project built around a clean separation between:
 
 - **Brain** — high-level Gameplay Ability System (GAS) logic and tag-driven state transitions
+- **Combat** — gameplay attributes, combat state, effects, and ability-driven response
 - **Body** — physical movement and prediction via Mover2
 - **Mind** — runtime tactical decision/data flow via State Trees and AI asset execution
 - **Skins** — visual/pose customization via Mutable / MetaHuman / PoseSearch
@@ -81,7 +82,7 @@ The workspace uses the following VS Code settings:
 - Create local MCP manifest for agent execution
 - Boot editor, confirm MCP server on port `30010`, and trigger initial build
 
-### Phase II: Brain Implementation (GAS & Sovereign Tags)
+### Phase II: Brain + Combat Implementation (GAS & Sovereign Tags)
 
 - Add gameplay tags like `Skin.Cosmetic.MutableUpdate` and `Skin.Skeletal.MetaHumanRig`
 - Build `GASP_CombatComponent` derived from `UActorComponent`
@@ -125,6 +126,28 @@ The workspace uses the following VS Code settings:
 - Advanced implementation should build the underlying tracking and prediction pipeline in `Source/GASP` and expose clean Blueprint access through `UGASP_StateTreeComponent`.
 - Track a ring buffer of trajectory samples in C++ and provide BlueprintCallable readouts for history and predicted future samples.
 - Use the existing `GASP_StateTreeComponent` as the bridge from the mover body to the animation-driven decision system.
+
+### Motion Matching Blueprint Mapping Spec
+
+#### Event Graph Cache Layer
+
+1. On `Blueprint Update Animation`, call `Try Get Pawn Owner`.
+2. Cast the returned pawn to the concrete actor type owning `GASP_StateTreeComponent`.
+3. Use `Get Component by Class` for `GASP_StateTreeComponent`.
+4. Call `GetPredictedTrajectoryHistory` on the component and convert the returned `TArray<FGASPTrajectorySample>` into the AnimBP-native variable `PoseSearchTrajectory`.
+5. Store the result in a Blueprint variable exposed to the Anim Graph.
+
+#### Anim Graph Injection Layer
+
+- In the main Locomotion state output, feed `PoseSearchTrajectory` into the motion matching node.
+- Configure the node to use the pose database `PSD_Locomotion`.
+- The node should expose the matching pose output, which is then routed to `Output Pose`.
+
+#### Notes
+
+- Do not modify the parent `SandboxCharacter_Mover` pawn blueprint.
+- Keep all trajectory array wiring inside `SandboxCharacter_Mover_ABP`.
+- Use the new `UGASP_StateTreeComponent::GetLocomotionSchemaProfile` getter to define core bone tracking profiles in C++ and keep designer workflow consistent.
 
 ### Phase VI.a: Current GAS Implementation Status
 

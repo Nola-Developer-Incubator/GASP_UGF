@@ -125,6 +125,11 @@ TArray<FGASPTrajectorySample> UGASP_StateTreeComponent::GetPredictedTrajectoryHi
     return Result;
 }
 
+FGASPLocomotionSchemaProfile UGASP_StateTreeComponent::GetLocomotionSchemaProfile() const
+{
+    return FGASPLocomotionSchemaProfile();
+}
+
 int32 UGASP_StateTreeComponent::GetTrajectoryHistoryCount() const
 {
     return TrajectoryHistory.Num();

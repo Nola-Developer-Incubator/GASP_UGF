@@ -19,7 +19,10 @@ This backlog captures the implemented phases, remaining work, and current progre
 - `GASP` build: **Succeeded**.
 - Core gameplay systems: **Implemented**.
 - Mind/AI phase: **Implemented**.
-- Remaining focus: **HIL-level integration, UI wiring, in-editor asset hookup, and feature polish**.
+- Motion matching trajectory API: **Added**.
+- Documentation and design plan: **Written**.
+- Repository GitHub remote configured and pushed: **Yes**.
+- Remaining focus: **Blueprint/AnimBP hookup, HIL integration, in-editor asset binding, and polish**.
 
 ## Backlog
 | Task | Area | Status | Notes |
@@ -28,6 +31,8 @@ This backlog captures the implemented phases, remaining work, and current progre
 | Implement combat attribute lifecycle | Combat | Done | Health, stamina, momentum, poise, and combat tags are functional.
 | Add skin tag and update flow | Skin | Done | `GASP_CosmeticsComponent` raises skin update events and updates combat tags.
 | Add motion matching pose search hooks | Skin | Done | `AnimNotifyState_DamageWindow` and pose search notifications were added for damage-driven matching.
+| Implement predicted trajectory API and AnimBP history support | Motion Matching | Done | `UGASP_StateTreeComponent` now exposes predicted trajectory arrays for AnimBP use.
+| Publish implementation plan and phase 2 design doc | Docs | Done | `Source/GASP/PDD_UnifiedGameplayFramework.md` published and referenced in README.
 | Add tactical evaluation helpers | Tactical | Done | `GASP_TacticalLibrary` evaluates distance/intent and ranks candidates.
 | Add validation library and pawn checks | Validation | Done | `GASP_ValidationLibrary` validates combat component and mover pawn.
 | Add mind/AI decision component | Mind | Done | `GASP_StateTreeComponent` evaluates intent and applies movement input.
@@ -45,7 +50,7 @@ This backlog captures the implemented phases, remaining work, and current progre
 | Phase 4 | Skin component, procedural rig, and motion matching foundation | 100% ✅ |
 | Phase 5 | Tactical and validation utilities | 100% ✅ |
 | Phase 6 | Mind/AI intent decision and movement | 100% ✅ |
-| Phase 7 | HIL-only integration and editor hookup | 35% 🔄 |
+| Phase 7 | HIL-only integration and editor hookup | 45% 🔄 |
 
 ## Next Steps
 1. Use the existing `GM_Sandbox` and `PC_Sandbox` blueprints as the foundation for your player setup.
@@ -54,7 +59,9 @@ This backlog captures the implemented phases, remaining work, and current progre
 4. Add HIL-level telemetry / debug logging for body/mind decision paths.
 5. Confirm gameplay tags drive the intended AI behavior in runtime.
 6. Polish any remaining runtime issues or asset bindings.
+7. Hook `GetPredictedTrajectoryHistory` into AnimBP/Blueprint motion matching and verify no duplicate pawn blueprint is needed.
+8. Keep future commits focused on source/docs changes only and avoid tracking large untracked content assets.
 
 ---
 
-_Last updated: May 21, 2026_
+_Last updated: May 23, 2026_

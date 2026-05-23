@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "GameplayTagContainer.h"
+#include "GASP_MotionMatchingTypes.h"
 #include "GASP_StateTreeComponent.generated.h"
 
 class AGASP_MoverCharacter;
@@ -50,6 +51,9 @@ public:
 
     UFUNCTION(BlueprintCallable, Category="GASP|Locomotion")
     TArray<FGASPTrajectorySample> GetPredictedTrajectoryHistory(int32 NumSamples, float SecondsPerSample) const;
+
+    UFUNCTION(BlueprintCallable, Category="GASP|MotionMatching")
+    FGASPLocomotionSchemaProfile GetLocomotionSchemaProfile() const;
 
     UFUNCTION(BlueprintPure, Category="GASP|Locomotion")
     int32 GetTrajectoryHistoryCount() const;
