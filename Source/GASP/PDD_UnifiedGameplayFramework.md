@@ -40,9 +40,31 @@ To maintain project stability, prevent data corruption, and ensure rapid modular
 
 * **Anim Blueprint Hookup:**
   1. Open `SandboxCharacter_Mover_ABP`.
-  2. Drop a native **Motion Matching** node inside the main locomotion pose graph.
-  3. Slot a pre-built Pose Search Database (`PSD_Locomotion`) directly into the node.
-  4. Connect the Anim Instance's internal trajectory data reference pin directly into the Motion Matching node's **Trajectory Input Pin**.
+  2. In the Event Graph, use `Try Get Pawn Owner` and call `Get Component by Class` for `GASP_StateTreeComponent`.
+  3. Promote the component reference to a local variable named `GASP_StateTree_Ref` and guard the flow with `Is Valid`.
+  4. Create a new AnimBP variable named `LivePoseSearchTrajectory` of type `TransformTrajectory`.
+  5. Call `Get Motion Matching Trajectory` on `GASP_StateTree_Ref` and assign its return value directly to `LivePoseSearchTrajectory`.
+  6. Do not use a `For Each Loop` or manual `Add Sample` nodes in the Event Graph.
+  8. In the Anim Graph, replace legacy locomotion output wiring with a native `Motion Matching` node.
+  9. Set the node's database to `PSD_Locomotion` and drive its `Trajectory` input pin with `LivePoseSearchTrajectory`.
+  10. Route the node's output pose to `Output Pose`.
+
+### 📍 Phase 2.1: HITL Verification Protocol
+
+*Review the full validation workflow in `Source/GASP/TEST_PROTOCOLS.md`.*
+
+* **High-Performance Validation Requirements:**
+  * Explicitly enable `bDebug` on the Motion Matching node in `SandboxCharacter_Mover_ABP` to visualize trajectory dots.
+  * Validate `AnimInstance` thread performance using Unreal Insights and confirm the custom update path stays under `0.05ms` per frame.
+  * Use the `Check Skeleton` utility to verify `foot_l`, `foot_r`, and `pelvis` bone name mapping as case-sensitive true/false checks.
+
+* **Active Block Targets:**
+  * `AnimBP Variable Connection`
+  * `HITL Editor Validation`
+
+* **Verification Notes:**
+  * Keep validation changes scoped to `Source/GASP` and `SandboxCharacter_Mover_ABP` serialization updates.
+  * Do not create untracked workspace files outside `Source/GASP` except approved editor asset metadata changes.
 
 ### 📍 Phase 3: IK Retargeting & Cosmetic Activation
 
@@ -96,6 +118,18 @@ Where:
   * **Bone Selection Tracks:** Add explicit joint samplers for `foot_l`, `foot_r`, and `pelvis`.
 
 * **Database Compilation (`PSD_Locomotion`):** Target the `SKM_UEFN_Mannequin` skeletal mesh. Inject clean locomotion assets (Walk, Run, Idle, and your custom `BP_MovementMode_Slide` asset profiles) and run an indexing generation pass to bake the vector cache.
+
+### 📍 Phase 3.1: Combat Pose Search Database Architecture
+
+* **Combat Database Name:** `PSD_Combat`.
+* **Combat Schema (`PSS_Combat`):** Build a second pose search schema focused on combat movement and transitions.
+  * **Root/Facing Weight:** Keep root position weight at `1.0`, but increase facing and direction stability to `1.25` to preserve attack orientation.
+  * **Speed & Velocity Tracks:** Add combat-specific pose tracks for `Velocity`, `Acceleration`, and `FacingDirection` to prevent sliding during hits and dodges.
+  * **Combat Pose Selection:** Include explicit samplers for `spine_01`, `hand_r`, `hand_l`, and `pelvis` to preserve upper-body aim and root stability.
+* **Database Content:** Index combat motion assets such as `Attack`, `Block`, `Parry`, `Dodge`, `Recover`, and `AimMove` states. Bake these into `PSD_Combat` for runtime lookup.
+* **Transition Control:** Keep the combat database separate from `PSD_Locomotion`; use `UGASP_StateTreeComponent` to activate it only when the character is in combat mode.
+* **Blueprint Helpers:** The component exposes `IsCombatMotionMatchingActive()` and `GetActivePoseSearchDatabaseName()` to support AnimBP decision logic between locomotion and combat pose search flows.
+* **In-Engine Validation:** Verify that the combat database uses the same skeleton as `PSD_Locomotion` and that bone mapping is consistent across both databases.
 
 ### 📍 Phase 4: State Tree Orchestration & Context Filtering
 

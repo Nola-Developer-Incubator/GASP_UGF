@@ -9,6 +9,7 @@
 #include "MoveLibrary/MovementUtils.h"
 #include "Engine/SkeletalMesh.h"
 #include "Animation/Skeleton.h"
+#include "Animation/TrajectoryTypes.h"
 
 UGASP_StateTreeComponent::UGASP_StateTreeComponent()
 {
@@ -130,6 +131,52 @@ TArray<FGASPTrajectorySample> UGASP_StateTreeComponent::GetPredictedTrajectoryHi
 FGASPLocomotionSchemaProfile UGASP_StateTreeComponent::GetLocomotionSchemaProfile() const
 {
     return FGASPLocomotionSchemaProfile();
+}
+
+FTransformTrajectory UGASP_StateTreeComponent::GetMotionMatchingTrajectory() const
+{
+    FTransformTrajectory QueryTrajectory;
+    if (!OwningMoverPawn || !OwningMoverPawn->MoverComponent)
+    {
+        return QueryTrajectory;
+    }
+
+    const TArray<FGASPTrajectorySample> PredictedSamples = GetPredictedTrajectoryHistory(TrajectoryHistorySize, TrajectorySampleInterval);
+    QueryTrajectory.Samples.Reserve(TrajectoryHistory.Num() + PredictedSamples.Num());
+
+    const FQuat PawnFacing = OwningMoverPawn->GetActorRotation().Quaternion();
+
+    for (const FGASPTrajectorySample& HistorySample : TrajectoryHistory)
+    {
+        FTransformTrajectorySample Sample;
+        Sample.Position = HistorySample.Position;
+        Sample.TimeInSeconds = HistorySample.TimeOffset;
+        Sample.Facing = HistorySample.Velocity.IsNearlyZero() ? PawnFacing : HistorySample.Velocity.ToOrientationQuat();
+        QueryTrajectory.Samples.Add(Sample);
+    }
+
+    for (const FGASPTrajectorySample& PredictedSample : PredictedSamples)
+    {
+        FTransformTrajectorySample Sample;
+        Sample.Position = PredictedSample.Position;
+        Sample.TimeInSeconds = PredictedSample.TimeOffset;
+        Sample.Facing = PredictedSample.Velocity.IsNearlyZero() ? PawnFacing : PredictedSample.Velocity.ToOrientationQuat();
+        QueryTrajectory.Samples.Add(Sample);
+    }
+
+    return QueryTrajectory;
+}
+
+bool UGASP_StateTreeComponent::IsCombatMotionMatchingActive() const
+{
+    const FGameplayTag AggressiveTag = UGameplayTagsManager::Get().RequestGameplayTag(TEXT("Intent.Aggressive"), false);
+    const FGameplayTag DefensiveTag = UGameplayTagsManager::Get().RequestGameplayTag(TEXT("Intent.Defensive"), false);
+    return CurrentIntentTags.HasTagExact(AggressiveTag) || CurrentIntentTags.HasTagExact(DefensiveTag);
+}
+
+FName UGASP_StateTreeComponent::GetActivePoseSearchDatabaseName() const
+{
+    return IsCombatMotionMatchingActive() ? FName(TEXT("PSD_Combat")) : FName(TEXT("PSD_Locomotion"));
 }
 
 bool UGASP_StateTreeComponent::ValidateMotionMatchingSkeleton(USkeletalMesh* SkeletalMesh, TArray<FName>& OutMissingBoneNames) const

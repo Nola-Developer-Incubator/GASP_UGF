@@ -132,24 +132,44 @@ The workspace uses the following VS Code settings:
 #### Event Graph Cache Layer
 
 1. On `Blueprint Update Animation`, call `Try Get Pawn Owner`.
-2. Cast the returned pawn to the concrete actor type owning `GASP_StateTreeComponent`.
-3. Use `Get Component by Class` for `GASP_StateTreeComponent`.
-4. Call `GetPredictedTrajectoryHistory` on the component and convert the returned `TArray<FGASPTrajectorySample>` into the AnimBP-native variable `PoseSearchTrajectory`.
-5. Store the result in a Blueprint variable exposed to the Anim Graph.
+2. From the pawn return, call `Get Component by Class` and search for `GASP_StateTreeComponent`.
+3. Promote the resulting component reference to a local variable named `GASP_StateTree_Ref`.
+4. Use an `Is Valid` check before any further array operations.
+5. Create a new AnimBP variable named `LivePoseSearchTrajectory` of type `TransformTrajectory`.
+6. Call `Get Motion Matching Trajectory` on `GASP_StateTree_Ref` and assign the returned `TransformTrajectory` directly into `LivePoseSearchTrajectory`.
+7. Do not use a `For Each Loop` or manual `Add Sample` nodes in the Event Graph.
+8. Use this cached `LivePoseSearchTrajectory` directly in the Anim Graph.
 
 #### Anim Graph Injection Layer
 
-- In the main Locomotion state output, feed `PoseSearchTrajectory` into the motion matching node.
-- Configure the node to use the pose database `PSD_Locomotion`.
-- The node should expose the matching pose output, which is then routed to `Output Pose`.
+- Open the main locomotion output graph in `SandboxCharacter_Mover_ABP`.
+- Replace legacy test state output with a native `Motion Matching` node.
+- Configure the node to use the database `PSD_Locomotion`.
+- Connect `LivePoseSearchTrajectory` into the node's `Trajectory` input pin.
+- Route the node's pose output into the `Output Pose` result.
+
+#### Visual Wiring Diagram
+
+```
+                          ┌─────────────────────────────────────────┐
+                          │         Motion Matching Node            │
+                          ├─────────────────────────────────────────┤
+                          │ Database: PSD_Locomotion                │
+                          │ Trajectory: [Get LivePoseSearchTrajectory]──► (Pin Entry)
+                          │                                         │
+                          │ (Out Pose) ─────────────────────────────┼──► [Output Pose]
+                          └─────────────────────────────────────────┘
+```
 
 #### Notes
 
-- Do not modify the parent `SandboxCharacter_Mover` pawn blueprint.
-- Keep all trajectory array wiring inside `SandboxCharacter_Mover_ABP`.
-- Use the new `UGASP_StateTreeComponent::GetLocomotionSchemaProfile` getter to define core bone tracking profiles in C++ and keep designer workflow consistent.
-- Use `UGASP_StateTreeComponent::GetLocomotionSchemaBoneNames` to retrieve the required bone list for the motion matching schema.
-- Before building `PSD_Locomotion`, use `ValidateMotionMatchingSkeleton` in the AnimBP or editor utility to verify the target `SKM_UEFN_Mannequin` skeleton contains the expected bone names.
+- Do not modify the base `SandboxCharacter_Mover` pawn blueprint.
+- Keep all trajectory translation and array wiring inside `SandboxCharacter_Mover_ABP`.
+- Use `UGASP_StateTreeComponent::GetLocomotionSchemaProfile` to keep the C++ and designer bone schema consistent.
+- Use `UGASP_StateTreeComponent::GetLocomotionSchemaBoneNames` to verify the expected bone list before building the pose database.
+- Use `ValidateMotionMatchingSkeleton` in the AnimBP or editor utility to verify the target skeleton before building `PSD_Locomotion`.
+- Use `UGASP_StateTreeComponent::GetActivePoseSearchDatabaseName` or `IsCombatMotionMatchingActive` to optionally drive combat vs locomotion database selection in the AnimBP.
+- For combat flow, build a second database named `PSD_Combat` and use the state tree to switch the AnimBP to combat-specific pose matching only when combat state is active.
 
 ### Phase VI.a: Current GAS Implementation Status
 

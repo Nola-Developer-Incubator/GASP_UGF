@@ -4,6 +4,7 @@
 #include "Components/ActorComponent.h"
 #include "GameplayTagContainer.h"
 #include "GASP_MotionMatchingTypes.h"
+#include "Animation/TrajectoryTypes.h"
 #include "GASP_StateTreeComponent.generated.h"
 
 class AGASP_MoverCharacter;
@@ -55,6 +56,15 @@ public:
 
     UFUNCTION(BlueprintCallable, Category="GASP|MotionMatching")
     FGASPLocomotionSchemaProfile GetLocomotionSchemaProfile() const;
+
+    UFUNCTION(BlueprintCallable, Category="GASP|MotionMatching", meta=(DisplayName = "Get Motion Matching Trajectory"))
+    FTransformTrajectory GetMotionMatchingTrajectory() const;
+
+    UFUNCTION(BlueprintPure, Category="GASP|MotionMatching")
+    bool IsCombatMotionMatchingActive() const;
+
+    UFUNCTION(BlueprintPure, Category="GASP|MotionMatching")
+    FName GetActivePoseSearchDatabaseName() const;
 
     UFUNCTION(BlueprintCallable, Category="GASP|MotionMatching")
     bool ValidateMotionMatchingSkeleton(USkeletalMesh* SkeletalMesh, TArray<FName>& OutMissingBoneNames) const;
