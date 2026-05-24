@@ -14,6 +14,7 @@ This backlog captures the implemented phases, remaining work, and current progre
 - Added mind/AI logic in `GASP_StateTreeComponent` with intent tag evaluation.
 - Added new gameplay tags for skin and combat states, plus AI intent tags.
 - Added motion matching skeleton validation helpers in `GASP_StateTreeComponent` for AnimBP and editor asset checks.
+- Added surface-aware audio subsystem scaffolding in `GASP_SurfaceAudioSubsystem` and `GASP_SurfaceAudioSettings`.
 - Verified full project build success after each major integration step.
 
 ## Current Status
@@ -25,8 +26,10 @@ This backlog captures the implemented phases, remaining work, and current progre
 - AnimBP binding spec: **Defined**.
 - Documentation and design plan: **Written**.
 - IDE Agent implementation directives: **Completed**.
+- Surface audio subsystem: **Scaffolded**.
+- Build/tooling updates: **UMG dependency added, VS Code include paths updated**.
 - Repository GitHub remote configured and pushed: **Yes**.
-- Remaining focus: **Blueprint/AnimBP hookup, HIL integration, in-editor asset binding, and polish**.
+- Remaining focus: **Blueprint/AnimBP hookup, HIL integration, surface audio runtime wiring, and polish**.
 
 ## Backlog
 | Task | Area | Status | Notes |
@@ -44,6 +47,8 @@ This backlog captures the implemented phases, remaining work, and current progre
 | Add mind/AI decision component | Mind | Done | `GASP_StateTreeComponent` evaluates intent and applies movement input.
 | Add gameplay tag definitions | Tags | Done | Combat, skin, and intent tags were added.
 | Wire pawn HUD and runtime UI | UI | In progress | `AGASP_MoverCharacter` now creates and updates a HUD widget on local control.
+| Add surface-aware audio subsystem and developer settings | Audio | In progress | Added subsystem files and engine config; needs runtime surface impact hookup.
+| Fix engine plugin VS Code include paths and build configuration | Tooling | Done | `c_cpp_properties.json` updated for Mover plugin; `GASP.Build.cs` added UMG dependency.
 | Wire HIL / higher-level integration | HIL | In progress | Final game logic and editor asset hookup remain.
 | Asset/blueprint setup for pawn and AI | Misc | Pending | Need in-editor binding and actor blueprint readiness.
 
@@ -56,7 +61,7 @@ This backlog captures the implemented phases, remaining work, and current progre
 | Phase 4 | Skin component, procedural rig, and motion matching foundation | 100% ✅ |
 | Phase 5 | Tactical and validation utilities | 100% ✅ |
 | Phase 6 | Mind/AI intent decision and movement | 100% ✅ |
-| Phase 7 | HIL-only integration and editor hookup | 45% 🔄 |
+| Phase 7 | HIL-only integration and editor hookup | 50% 🔄 |
 
 ## Next Steps
 1. Use the existing `GM_Sandbox` and `PC_Sandbox` blueprints as the foundation for your player setup.
@@ -65,10 +70,12 @@ This backlog captures the implemented phases, remaining work, and current progre
 4. Add HIL-level telemetry / debug logging for body/mind decision paths.
 5. Confirm gameplay tags drive the intended AI behavior in runtime.
 6. Wire `SandboxCharacter_Mover_ABP` to the motion matching node by converting `GetPredictedTrajectoryHistory` output into the native `PoseSearchTrajectory` input.
-7. Validate `FGASPLocomotionSchemaProfile` bone definitions against `SKM_UEFN_Mannequin` using `ValidateMotionMatchingSkeleton` and adjust weights as needed.
-8. Keep `SandboxCharacter_Mover` unchanged; all integration should occur through AnimBP and `UGASP_StateTreeComponent`.
-9. Polish any remaining runtime issues or asset bindings.
-10. Keep future commits focused on source/docs changes only and avoid tracking large untracked content assets.
+7. Integrate `GASP_SurfaceAudioSubsystem` with surface impact audio events and designer-facing settings.
+8. Validate `FGASPLocomotionSchemaProfile` bone definitions against `SKM_UEFN_Mannequin` using `ValidateMotionMatchingSkeleton` and adjust weights as needed.
+9. Keep `SandboxCharacter_Mover` unchanged; all integration should occur through AnimBP and `UGASP_StateTreeComponent`.
+10. Reopen VS Code or regenerate compile commands after the engine include-path update, then verify diagnostics for the Mover plugin header.
+11. Polish any remaining runtime issues or asset bindings.
+12. Keep future commits focused on source/docs changes only and avoid tracking large untracked content assets.
 
 ---
 

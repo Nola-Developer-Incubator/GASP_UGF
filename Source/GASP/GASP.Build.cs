@@ -8,7 +8,7 @@ public class GASP : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Mover", "NetworkPrediction", "GameplayAbilities", "StateTreeModule", "PoseSearch" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Mover", "NetworkPrediction", "GameplayAbilities", "StateTreeModule", "PoseSearch", "UMG" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
