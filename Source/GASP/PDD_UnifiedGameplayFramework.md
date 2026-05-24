@@ -66,6 +66,17 @@ To maintain project stability, prevent data corruption, and ensure rapid modular
   * Keep validation changes scoped to `Source/GASP` and `SandboxCharacter_Mover_ABP` serialization updates.
   * Do not create untracked workspace files outside `Source/GASP` except approved editor asset metadata changes.
 
+### 📍 Phase 2.2: Surface Audio Integration
+
+* **Subsystem:** Add a `UGASP_SurfaceAudioSubsystem` component to `SandboxCharacter_Mover`.
+* **Blueprint Variable:** Create `CurrentSurface` in `SandboxCharacter_Mover_ABP` as an enum-backed surface type or `FName` mapping.
+* **Audio Logic:** Use `Motion Matching -> Surface Type` to drive `CurrentSurface`.
+* **Footstep Events:** Add `Footstep_Left` and `Footstep_Right` notifies to the AnimGraph.
+* **Notify Handler:** On each foot notify, call `PlayImpactSound(CurrentSurface, CurrentLocation)` on `GASP_SurfaceAudioSubsystem`.
+* **Surface Tuning:** Configure `SurfaceImpactSounds` with per-surface sound assets and allow pitch randomization and velocity-scaled volume.
+* **Engine Config:** Add custom physical surface audio settings to `Config/DefaultEngine.ini` under `[/Script/GASP.GASP_SurfaceAudioSettings]`.
+* **Project Settings:** After compiling, open the Project Settings window and verify the `GASP: Surface Audio` section exposes `Surface Trace Channel`, `Max Trace Distance`, and audio modulation parameters for designer tuning.
+
 ### 📍 Phase 3: IK Retargeting & Cosmetic Activation
 
 * **Mesh Verification:** Select the `SkeletalMeshComponent` and verify its relative **Location Z** is adjusted to exactly `-86.000000` to align flush with the capsule base ($CapsuleHalfHeight = 86.0$).
