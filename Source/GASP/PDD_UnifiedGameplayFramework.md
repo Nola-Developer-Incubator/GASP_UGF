@@ -71,11 +71,13 @@ To maintain project stability, prevent data corruption, and ensure rapid modular
 * **Subsystem:** Add a `UGASP_SurfaceAudioSubsystem` component to `SandboxCharacter_Mover`.
 * **Blueprint Variable:** Create `CurrentSurface` in `SandboxCharacter_Mover_ABP` as an enum-backed surface type or `FName` mapping.
 * **Audio Logic:** Use `Motion Matching -> Surface Type` to drive `CurrentSurface`.
-* **Footstep Events:** Add `Footstep_Left` and `Footstep_Right` notifies to the AnimGraph.
+* **Footstep Events:** Add `Footstep_Left` and `Footstep_Right` notifies to the AnimGraph, or use the new `UAnimNotify_GASPFootstep` notify type for footstep impacts.
 * **Notify Handler:** On each foot notify, call `PlayImpactSound(CurrentSurface, CurrentLocation)` on `GASP_SurfaceAudioSubsystem`.
 * **Surface Tuning:** Configure `SurfaceImpactSounds` with per-surface sound assets and allow pitch randomization and velocity-scaled volume.
 * **Engine Config:** Add custom physical surface audio settings to `Config/DefaultEngine.ini` under `[/Script/GASP.GASP_SurfaceAudioSettings]`.
 * **Project Settings:** After compiling, open the Project Settings window and verify the `GASP: Surface Audio` section exposes `Surface Trace Channel`, `Max Trace Distance`, and audio modulation parameters for designer tuning.
+
+* **HITL Verification:** Use `Docs/HITL-Workflow.md` to execute the formal human-in-the-loop validation workflow once code and assets are bound.
 
 ### 📍 Phase 3: IK Retargeting & Cosmetic Activation
 

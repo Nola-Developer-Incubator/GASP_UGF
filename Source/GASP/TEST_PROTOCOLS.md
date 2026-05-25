@@ -84,3 +84,4 @@ This file captures the Human-in-the-Loop (HITL) testing protocol for the high-pe
 
 * Keep the validation artifacts limited to `Source/GASP` and `SandboxCharacter_Mover_ABP` serialization updates.
 * Do not create any untracked workspace files outside the `Source/GASP` folder except for approved editor asset metadata changes.
+* For complete HITL coverage, also follow `Docs/HITL-Workflow.md` and record outcomes in `BACKLOG.md`.

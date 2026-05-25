@@ -120,56 +120,7 @@ The workspace uses the following VS Code settings:
 
 ### Phase VI.b: Motion Matching Integration Plan
 
-- Keep `SandboxCharacter_Mover` as-is and avoid duplicating or repathing the pawn blueprint.
-- Refer to `Source/GASP/PDD_UnifiedGameplayFramework.md` for the official Tier 1 / Tier 2 implementation plan.
-- Basic implementation should be a Blueprint-only drop-in for Level Designers: add a trajectory component, point the existing AnimBP to a pose search database, and keep the current pawn type unchanged.
-- Advanced implementation should build the underlying tracking and prediction pipeline in `Source/GASP` and expose clean Blueprint access through `UGASP_StateTreeComponent`.
-- Track a ring buffer of trajectory samples in C++ and provide BlueprintCallable readouts for history and predicted future samples.
-- Use the existing `GASP_StateTreeComponent` as the bridge from the mover body to the animation-driven decision system.
-
-### Motion Matching Blueprint Mapping Spec
-
-#### Event Graph Cache Layer
-
-1. On `Blueprint Update Animation`, call `Try Get Pawn Owner`.
-2. From the pawn return, call `Get Component by Class` and search for `GASP_StateTreeComponent`.
-3. Promote the resulting component reference to a local variable named `GASP_StateTree_Ref`.
-4. Use an `Is Valid` check before any further array operations.
-5. Create a new AnimBP variable named `LivePoseSearchTrajectory` of type `TransformTrajectory`.
-6. Call `Get Motion Matching Trajectory` on `GASP_StateTree_Ref` and assign the returned `TransformTrajectory` directly into `LivePoseSearchTrajectory`.
-7. Do not use a `For Each Loop` or manual `Add Sample` nodes in the Event Graph.
-8. Use this cached `LivePoseSearchTrajectory` directly in the Anim Graph.
-
-#### Anim Graph Injection Layer
-
-- Open the main locomotion output graph in `SandboxCharacter_Mover_ABP`.
-- Replace legacy test state output with a native `Motion Matching` node.
-- Configure the node to use the database `PSD_Locomotion`.
-- Connect `LivePoseSearchTrajectory` into the node's `Trajectory` input pin.
-- Route the node's pose output into the `Output Pose` result.
-
-#### Visual Wiring Diagram
-
-```
-                          ┌─────────────────────────────────────────┐
-                          │         Motion Matching Node            │
-                          ├─────────────────────────────────────────┤
-                          │ Database: PSD_Locomotion                │
-                          │ Trajectory: [Get LivePoseSearchTrajectory]──► (Pin Entry)
-                          │                                         │
-                          │ (Out Pose) ─────────────────────────────┼──► [Output Pose]
-                          └─────────────────────────────────────────┘
-```
-
-#### Notes
-
-- Do not modify the base `SandboxCharacter_Mover` pawn blueprint.
-- Keep all trajectory translation and array wiring inside `SandboxCharacter_Mover_ABP`.
-- Use `UGASP_StateTreeComponent::GetLocomotionSchemaProfile` to keep the C++ and designer bone schema consistent.
-- Use `UGASP_StateTreeComponent::GetLocomotionSchemaBoneNames` to verify the expected bone list before building the pose database.
-- Use `ValidateMotionMatchingSkeleton` in the AnimBP or editor utility to verify the target skeleton before building `PSD_Locomotion`.
-- Use `UGASP_StateTreeComponent::GetActivePoseSearchDatabaseName` or `IsCombatMotionMatchingActive` to optionally drive combat vs locomotion database selection in the AnimBP.
-- For combat flow, build a second database named `PSD_Combat` and use the state tree to switch the AnimBP to combat-specific pose matching only when combat state is active.
+See `Docs/AdvancedMotionMatching.md` for the full advanced Motion Matching integration plan, Blueprint mapping spec, known workflow issues, and recommended fixes.
 
 ### Phase VI.a: Current GAS Implementation Status
 
@@ -219,12 +170,10 @@ Your assignment is to parse the 'GASP.uproject' JSON file in the root directory 
    - Chooser
    - ControlRig
    - NetworkPrediction
-   - CustomizableObject
+   - StateTree
    - MetaHuman
-   - ModularGameplayActors
    - ModularGameplay
    - GameFeatures
-   - GameSubtitles
    - UE_MCP_AGENT_PLUGIN
    - AzureUE_MCP
 

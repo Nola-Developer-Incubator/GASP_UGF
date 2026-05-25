@@ -9,11 +9,13 @@
 #include "GASP_CosmeticsComponent.h"
 #include "GASP_StateTreeComponent.h"
 #include "GASP_AbilitySystemComponent.h"
+#include "GASP_SurfaceAudioSubsystem.h"
 #include "GASP_MoverCharacter.generated.h"
 
 class UGASP_HUDWidget;
 class UAbilitySystemComponent;
 class UGameplayAbility;
+class UGASP_SurfaceAudioSubsystem;
 
 /**
  * AGASP_MoverCharacter is the core pawn for mover-driven movement and gameplay.
@@ -62,6 +64,9 @@ public:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Cosmetics")
     UGASP_CosmeticsComponent* SkinComponent;
 
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Audio")
+    UGASP_SurfaceAudioSubsystem* SurfaceAudioComponent;
+
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="State")
     UGASP_StateTreeComponent* MindComponent;
 
@@ -84,6 +89,9 @@ public:
 
     UFUNCTION(BlueprintCallable, Category="Abilities")
     UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+
+    UFUNCTION(BlueprintCallable, Category="Audio")
+    void PlayFootstepImpactAtLocation(const FVector& Location, EAudioSurfaceType SurfaceType);
 
     virtual void PossessedBy(AController* NewController) override;
     virtual void OnRep_PlayerState() override;

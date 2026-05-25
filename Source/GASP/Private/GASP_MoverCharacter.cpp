@@ -8,6 +8,7 @@
 #include "GASP_CosmeticsComponent.h"
 #include "GASP_AbilitySystemComponent.h"
 #include "GASP_HUDWidget.h"
+#include "GASP_SurfaceAudioSubsystem.h"
 #include "DefaultMovementSet/CharacterMoverComponent.h"
 
 AGASP_MoverCharacter::AGASP_MoverCharacter()
@@ -22,6 +23,7 @@ AGASP_MoverCharacter::AGASP_MoverCharacter()
     MoverComponent = CreateDefaultSubobject<UMoverComponent>(TEXT("MoverComponent"));
     CombatComponent = CreateDefaultSubobject<UGASP_CombatComponent>(TEXT("GASPCombatComponent"));
     SkinComponent = CreateDefaultSubobject<UGASP_CosmeticsComponent>(TEXT("GASPSkinComponent"));
+    SurfaceAudioComponent = CreateDefaultSubobject<UGASP_SurfaceAudioSubsystem>(TEXT("GASPSurfaceAudioSubsystem"));
     MindComponent = CreateDefaultSubobject<UGASP_StateTreeComponent>(TEXT("GASPMindComponent"));
     BrainComponent = CreateDefaultSubobject<UGASP_AbilitySystemComponent>(TEXT("GASPBrainComponent"));
     AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
@@ -225,6 +227,14 @@ void AGASP_MoverCharacter::HandleMetaHumanRigUpdate(FName RigParameterName, floa
 UAbilitySystemComponent* AGASP_MoverCharacter::GetAbilitySystemComponent() const
 {
     return AbilitySystemComponent;
+}
+
+void AGASP_MoverCharacter::PlayFootstepImpactAtLocation(const FVector& Location, EAudioSurfaceType SurfaceType)
+{
+    if (SurfaceAudioComponent)
+    {
+        SurfaceAudioComponent->PlayImpactSound(SurfaceType, Location);
+    }
 }
 
 void AGASP_MoverCharacter::PossessedBy(AController* NewController)

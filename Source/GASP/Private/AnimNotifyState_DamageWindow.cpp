@@ -3,9 +3,9 @@
 #include "GASP_CosmeticsComponent.h"
 #include "GameFramework/Actor.h"
 
-void UAnimNotifyState_DamageWindow::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, float TotalDuration)
+void UAnimNotifyState_DamageWindow::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, float TotalDuration, const FAnimNotifyEventReference& EventReference)
 {
-    Super::NotifyBegin(MeshComp, Animation, TotalDuration);
+    Super::NotifyBegin(MeshComp, Animation, TotalDuration, EventReference);
 
     if (!MeshComp)
     {
@@ -25,9 +25,9 @@ void UAnimNotifyState_DamageWindow::NotifyBegin(USkeletalMeshComponent* MeshComp
     }
 }
 
-void UAnimNotifyState_DamageWindow::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation)
+void UAnimNotifyState_DamageWindow::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation, const FAnimNotifyEventReference& EventReference)
 {
-    Super::NotifyEnd(MeshComp, Animation);
+    Super::NotifyEnd(MeshComp, Animation, EventReference);
 
     if (!MeshComp)
     {
